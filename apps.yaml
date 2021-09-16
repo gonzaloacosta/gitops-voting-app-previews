@@ -9,7 +9,7 @@ spec:
   project: voting-app-develop
   source:
     repoURL: https://github.com/gonzaloacosta/gitops-voting-app-develop.git
-    targetRevision: HEAD
+    targetRevision: develop 
     path: helm
   destination:
     server: https://kubernetes.default.svc
