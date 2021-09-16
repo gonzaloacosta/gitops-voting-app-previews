@@ -1,19 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: production
+  name: voting-app-develop
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: production
+  project: voting-app-develop
   source:
-    repoURL: https://github.com/gonzaloacosta/gitops-voting-app-production.git
+    repoURL: https://github.com/gonzaloacosta/gitops-voting-app-develop.git
     targetRevision: HEAD
     path: helm
   destination:
     server: https://kubernetes.default.svc
-    namespace: production
+    namespace: voting-app-develop
   syncPolicy:
     automated:
       selfHeal: true
