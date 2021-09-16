@@ -6,7 +6,7 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: voring-app-develop
+  project: development 
   source:
     path: helm
     repoURL: https://github.com/gonzaloacosta/voting-app.git
@@ -16,17 +16,17 @@ spec:
         result:
           image:
             tag: develop
-          ingressHost: voting-app.develop.192.168.64.6.nip.io
+          ingressHost: result.develop.192.168.64.6.nip.io
         vote:
           image:
             tag: develop
-          ingressHost: voting-app.develop.192.168.64.6.nip.io
+          ingressHost: vote.develop.192.168.64.6.nip.io
         worker:
           image:
             tag: develop
       version: v3
   destination:
-    namespace: vorting-app-develop
+    namespace: development 
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:

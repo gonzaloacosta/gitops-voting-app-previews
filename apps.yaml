@@ -6,14 +6,14 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: voting-app-develop
+  project: development 
   source:
     repoURL: https://github.com/gonzaloacosta/gitops-voting-app-develop.git
     targetRevision: HEAD 
     path: helm
   destination:
     server: https://kubernetes.default.svc
-    namespace: voting-app-develop
+    namespace: development 
   syncPolicy:
     automated:
       selfHeal: true

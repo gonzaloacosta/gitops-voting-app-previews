@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: voting-app-develop
+  name: development
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  description: Voting App Develop project
+  description: Develop project
   sourceRepos:
   - '*'
   destinations:
