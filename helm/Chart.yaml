@@ -1,4 +1,4 @@
 apiVersion: v1
-description: Development environment
-name: voting-app
-version: "0.0.2"
+description: Previews environment
+name: previews
+version: "0.0.5"

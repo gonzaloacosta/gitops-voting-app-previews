@@ -1,21 +1,24 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: development
+  name: previews
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  description: Develop project
+  description: Previews
   sourceRepos:
   - '*'
   destinations:
-  - namespace: '*'
+  - namespace: previews
+    server: https://kubernetes.default.svc
+  - namespace: "pr-*"
+    server: https://kubernetes.default.svc
+  - namespace: argocd
     server: https://kubernetes.default.svc
   clusterResourceWhitelist:
-  - group: '*'
-    kind: '*'
+  - group: ''
+    kind: Namespace
   namespaceResourceWhitelist:
-  - group: '*'
-    kind: '*'
-
+  - group: "*"
+    kind: "*"
