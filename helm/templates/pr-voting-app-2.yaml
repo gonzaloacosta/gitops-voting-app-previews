@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: _APP_ID_
+  name: pr-voting-app-2
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -9,26 +9,26 @@ spec:
   project: previews
   source:
     path: helm
-    repoURL: https://github.com/gonzaloacosta/_REPO_.git
+    repoURL: https://github.com/gonzaloacosta/voting-app.git
     targetRevision: HEAD
     helm:
       values: |
         result:
           image:
-            tag: _IMAGE_TAG_ 
+            tag: pr-2 
           ingress:
-            host: result._APP_ID_.192.168.64.6.nip.io
+            host: result.pr-voting-app-2.192.168.64.6.nip.io
         vote:
           image:
-            tag: _IMAGE_TAG_ 
+            tag: pr-2 
           ingress:
-            host: vote._APP_ID_.192.168.64.6.nip.io
+            host: vote.pr-voting-app-2.192.168.64.6.nip.io
         worker:
           image:
-            tag: _IMAGE_TAG_ 
+            tag: pr-2 
       version: v3
   destination:
-    namespace: _APP_ID_
+    namespace: pr-voting-app-2
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
