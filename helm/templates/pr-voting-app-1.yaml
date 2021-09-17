@@ -10,7 +10,7 @@ spec:
   source:
     path: helm
     repoURL: https://github.com/gonzaloacosta/voting-app.git
-    targetRevision: HEAD
+    targetRevision: pr-1
     helm:
       values: |
         result:
